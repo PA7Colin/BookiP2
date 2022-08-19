@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
+:root
+{
+    --maincolor : #0065FC;
+    --colorsecondary : #deebff;
+    --shadowcolor : #0000002e;
+    --bgcolor : #f2f2f2;
+}
+
 body
 {
     font-family: 'Raleway' ,sans-serif;
-    margin: 0;
+    margin: auto;
     padding: 0;
     max-width: 1450px;
 }
@@ -34,13 +42,13 @@ nav a
 {
     text-decoration: none;
     padding: 40px;
-    color: black;
+    color: inherit;
     border-top: 3px solid transparent;
 }
 nav a:hover
 {
-    border-top: 3px solid #0065FC;
-    color: #0065FC !important;
+    border-top: 3px solid var(--maincolor);
+    color: var(--maincolor);
 }
 .onglets
 {
@@ -54,7 +62,7 @@ nav a:hover
     main 
     {
         margin: 0;
-        padding: 25px;
+        padding: 0px 0px 25px 25px;
     }
 
     #logo
@@ -72,10 +80,12 @@ nav a:hover
         flex-basis: 50%;
         text-align: center;
         border-top: transparent;
+        padding: 20px;
+        font-size: 18px;
     }
     .onglets a:hover
     {
-        border-bottom: 4px groove #0065FC;
+        border-bottom: 4px groove var(--maincolor);
         border-top: transparent;
     }
 }    
@@ -101,7 +111,7 @@ nav a:hover
     }
     .onglets a:hover
     {
-        border-bottom: 4px groove #0065FC;
+        border-bottom: 4px groove var(--maincolor);
         border-top: transparent;
     }
 }
@@ -128,12 +138,12 @@ form i
 
 #mapbackground
 {
-    background-color: lightgray;
+    background-color: var(--bgcolor);
 }
 
 .formsearch
 {
-    border: 1px solid #f2f2f2;
+    border: 1px solid var(--bgcolor);
     font-size: large ;
     font-weight: bold;
     height: 50px;
@@ -149,13 +159,13 @@ form button
 {
     padding: 0 30px 0 30px;
     cursor:pointer;
-    background-color: #0065FC ;
+    background-color: var(--maincolor) ;
     opacity: 0.9;
     border-radius: 0px 15px 15px 0;
     border: none;
     font-weight: bold;
     font-size: 17px;
-    color: #f2f2f2;
+    color: var(--bgcolor);
 }
 
 form button:hover
@@ -193,7 +203,7 @@ form button
 {
     border-radius: 15px 15px 15px 15px;
     padding: 0%;
-    background-color: #0065FC;  
+    background-color: var(--maincolor);  
 }
 
 #loupe
@@ -201,7 +211,7 @@ form button
     display: inline;
     margin: 0;
     padding: 0;
-    color: #f2f2f2;
+    color: var(--bgcolor);
 }
 }
 
@@ -240,13 +250,13 @@ form button
 .filterslist:hover
 {
     transform: scale(1.025);
-    background-color: #deebff;
+    background-color: var(--colorsecondary);
 }
     
 .filters i
 {
-    color: #0065FC;
-    background-color: #deebff;
+    color: var(--maincolor);
+    background-color: var(--colorsecondary);
     height: 50px;
     width: 50px;
     border-radius: 25px;
@@ -279,7 +289,7 @@ form button
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #0065FC;
+    color: var(--maincolor);
     border-radius: 50%;
 }
 /***************************MediaQueriesFILTERS******************************************************/
@@ -307,7 +317,7 @@ form button
 .hosting .hostingcity
 {
     flex-basis: 66%;
-    background-color: #f2f2f2;
+    background-color: var(--bgcolor);
     padding: 25px 0 25px 25px;
     border-radius: 16px;
 }
@@ -330,7 +340,7 @@ form button
     margin: 0;
     width: 235px;
     border-radius: 16px;
-    box-shadow:  0 0 16px #0000002e;
+    box-shadow:  0 0 16px var(--shadowcolor);
     padding: 5px 5px 8px 5px;
     background-color: white;
 }
@@ -338,7 +348,7 @@ form button
 .hostingcard:hover
 {
     transform: scale(1.050);
-    background-color: #deebff;
+    background-color: var(--colorsecondary);
     transition: all 150ms;
 }
 
@@ -378,7 +388,7 @@ form button
 
 .rankinfo i
 {
-    color: #0065FC;
+    color: var(--maincolor);
     font-size: small;
 }
 
@@ -406,7 +416,7 @@ form button
 .mostpopular
 {
 
-    background-color: #f2f2f2;
+    background-color: var(--bgcolor);
     flex-basis: 33%;
     padding: 25px;
     border-radius: 16px;
@@ -414,11 +424,11 @@ form button
 
 .mostpopularcard
 {
-    margin: 0 0 10% 0;
+    margin-bottom: 5%;
     padding: 3px;
     border-radius: 16px;
-    box-shadow:  0 0 16px #0000002e;
-    background-color: white;
+    box-shadow:  0 0 16px var(--shadowcolor);
+    background-color: inherit;
     cursor: pointer;
     width: 344px;
     cursor: pointer; 
@@ -427,7 +437,7 @@ form button
 .mostpopularcard:hover
 {
     transform: scale(1.050);
-    background-color: #deebff;
+    background-color: var(--colorsecondary);
     transition: all 150ms;
 }
 
@@ -435,12 +445,16 @@ form button
 {
     display: flex;
     text-decoration: none;
-    color: inherit;    
+    color: inherit;
+       
 }
 
 .popularflexboxinfo
 {
     padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .popularh3title
@@ -452,14 +466,13 @@ form button
   
 .popularflexboxinfo p
 {
-    margin:  0 0 32px 0;
-    font-size: 15px;
+    margin:  0;
 }
    
 .popularflexboxinfo i
 
 {
-    color: #0065FC;
+    color: var(--maincolor);
     font-size: small;
 }
  
@@ -489,6 +502,12 @@ form button
     height: 125px;
     border-radius: 16px 0 0 16px;
 }
+
+.stars
+{
+    padding-bottom: 5px;
+
+}
 /******************************************MediaQueriesHOSTING***********************************/
 
 @media all and (max-width: 768px)
@@ -503,6 +522,7 @@ form button
     {
         margin: 0;
         background-color: inherit;
+        padding: 0;
     }
 
     .hosting .mostpopular
@@ -512,7 +532,7 @@ form button
 
     .hostingcard
     {
-        min-width: 98%;
+        min-width: 90%;
     }
     .hostingcity img
     {
@@ -523,20 +543,18 @@ form button
     .mostpopular
     {
         border-radius: 0;
+        margin-left: -25px;
+        padding-bottom: 0;
     }
+
     .mostpopularcard
     {
         min-height: 125px;
         max-height: 125px;
+        margin-bottom: 5%;
+        max-width: 95%;
     }
-    .mostpopularcard img
-    {
-        object-fit: cover;
-        height: 125px;
-        max-height: 125px;
-        min-width: 125px ;
-    }
-
+    
     .popularh3title
     {
         font-size: 16px;
@@ -573,6 +591,7 @@ form button
     .mostpopularcard
     {
         min-width: 100%;
+        margin-bottom: 5%;
     }
 
     .mostpopularcard img
@@ -619,18 +638,12 @@ form button
 
     .mostpopularcard img
     {
-        height: 160px;  
+        height: 160px;
     }
 
     .popularflexboxinfo
     {
-        max-height: 160px;
-        overflow: scroll;
-    }
-
-    .popularflexboxinfo p 
-    {
-        margin-bottom: 65px;
+        max-height: 160px; /******BONJOUR******/
     }
   
     .mediaflexbox
@@ -703,31 +716,48 @@ form button
     color: initial;
 }
 
+.activitycard1,.activitycard2,.activitycard3,.activitycard4
+{
+    width: 302px;
+    height: 466px;
+    background-color: inherit;
+    
+}
+   
+.activitycard1,.activitycard2img1,.activitycard2img2,.activitycard3,.activitycard4img1,.activitycard4img2
+{
+    
+    box-shadow:  0 0 16px var(--shadowcolor);
+    border-radius: 16px 16px 16px 16px;
+}
+
 .activitycard1:hover,.activitycard2img1:hover,.activitycard2img2:hover,.activitycard3:hover,.activitycard4img1:hover,.activitycard4img2:hover
 {
     transform: scale(1.035);
-    background-color: white;
+    background-color: inherit;
     transition: all 100ms;
     cursor: pointer;
-    border-radius: 16px 16px 0 0;
+    background-color: var(--colorsecondary);
 }
 
 .allactivitycard h3
 {
     margin: 20px 0 20px 20px;
+   
 }
 
-.activitycard1,.activitycard2,.activitycard3,.activitycard4
+.activitycard2 h3
 {
-    width: 302px;
-    height: 444px;
-    border-radius: 16px 16px 0 0;
-    background-color: white;
+    padding-bottom: 11.5px;
+}
+.activitycard4 h3
+{
+    padding-bottom: 12px;
 }
 
 .activitycard1 img
 {
-    height: 90%;
+    height: 87%;
     width: 100%;
 }
 
@@ -743,15 +773,19 @@ form button
     width: 100%;
 }
 
-.whitespace
+#whitespace
 {
-    height: 10%;
+    height: 9%;
+}
+#whitespace2
+{
+    height: 8%;
 }
 
 .activitycard3 img
 {
     width: 100%;
-    height: 90%;
+    height: 87%;
 }
 
 .activitycard4img1 img
@@ -767,25 +801,42 @@ form button
     height: 150px;
 }
 
+@media all and (max-width: 768px)
+{
+    .activity
+    {
+        padding-left: 0;
+    }
+}
+    
 @media all and (max-width: 992px)
 
 {
     .allactivitycard
     {
-        flex-direction: column; 
+        flex-direction: column;
+        gap: 20px;
+    }
+    .activity
+    {
+        padding: 0 0 20px 0;
+    }
+    .activitycard1
+    {
+        padding-bottom: 10px;
     }
 
-    .activitycard2
+    .activitycard2,.activitycard4
     {
         display: flex;
         flex-direction: column ;
-        height: 380px;
-        width: 95%;       
+        height: 435px;
+        width: 93%;       
     }
 
-    .activitycard1,.activitycard3,.activitycard4
+    .activitycard1,.activitycard3
     {
-        width: 95%;
+        width: 93%;
         height: 190px;
         flex-wrap: wrap;
     }
@@ -796,27 +847,30 @@ form button
         width: 100%;
     }
 
-    .activity
+    #whitespace,#whitespace2
     {
-        padding-bottom: 235px;
+        min-height: 25px;
     }
 
-    .whitespace
+    .activity h3
     {
-        display: none;
-    } 
+        padding-bottom: 0;
+    }
+
+
 }
 /************************************************************/
 /********FOOTER**********/
 
 footer
 {
-    background-color: #f2f2f2;
+    background-color: var(--bgcolor);
     display: flex;
     gap: 15%;
     padding: 10px 0 20px 75px;
-    width: 100%;
+    width: calc(100% - 75px);
 }
+    
 
 footer ul 
 {
